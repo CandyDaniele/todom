@@ -81,6 +81,24 @@ const render = (tarefas) => {
         tdTexto.innerText = tarefa.texto;
         row.appendChild(tdTexto);
 
+        //criar a td de prioridade
+        let tdPrioridade = document.createElement('td');
+        let strPri;
+        switch (tarefa.prioridade){
+            case 1:
+                strPri = "Alta";
+                break;
+            case 2:
+                strPri = "Média";
+                break;
+            case 3:
+                strPri = "Baixa";
+                break;
+
+        }
+        tdPrioridade.innerText = strPri;
+        row.appendChild(tdPrioridade);
+
         //criar td de ações
         let tdAcoes = document.createElement('td');
         let i = document.createElement('i');
@@ -163,7 +181,7 @@ form.addEventListener('submit', (evt) => {
     //criar o objeto de tarefa sabendo o texto e a prioridade
     let tarefa = create(texto, prioridade);
 
-    
+
     //adicionar o objeto tarefa ao array de tarefas
     tarefas.push(tarefa);
 
