@@ -163,6 +163,7 @@ form.addEventListener('submit', (evt) => {
     //criar o objeto de tarefa sabendo o texto e a prioridade
     let tarefa = create(texto, prioridade);
 
+    
     //adicionar o objeto tarefa ao array de tarefas
     tarefas.push(tarefa);
 
